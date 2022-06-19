@@ -8,7 +8,6 @@
 import UIKit
 import RealmSwift
 
-
 class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
@@ -26,8 +25,6 @@ class CategoryViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
-        //let color = randomColor(hue: .random, luminosity: .dark)
-        //cell.backgroundColor = color
         return cell
     }
     //MARK - TableView Delegate Methods

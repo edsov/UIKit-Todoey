@@ -7,7 +7,6 @@
 
 import UIKit
 import RealmSwift
-import Hue
 
 class TodoListViewController: SwipeTableViewController {
     
@@ -23,8 +22,8 @@ class TodoListViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor(hex: "#ffafc2")
-        searchBar.barTintColor = UIColor(hex: "#ffafc2")
+        navigationController?.navigationBar.barTintColor = UIColor(named: "#ffafc2")
+        searchBar.barTintColor = UIColor(named: "#ffafc2")
         
     }
     //MARK - TableView Datasource Methods
@@ -62,7 +61,6 @@ class TodoListViewController: SwipeTableViewController {
         if let item = self.todoItems?[indexPath.row]{
             do {
                 try self.realm.write{
-                    //item.done = !item.done
                     realm.delete(item)
                 }
             } catch {
